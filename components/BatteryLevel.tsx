@@ -9,7 +9,7 @@ export default class BatteryLevel extends React.Component<{ nb: number }> {
 					styles.batteryLevel,
 					{
 						height: (this.props.nb / 100) * 272,
-						backgroundColor: this.props.nb > 80 ? '#46cf73' : this.props.nb > 30 ? '#fccf00' : '#ff3c42',
+						backgroundColor: this.props.nb > 80 ? '#46cf73' : this.props.nb > 60 ? '#6dcc00' : this.props.nb > 40 ? '#fccf00' : this.props.nb > 20 ? '#fea000' : '#ff3c42',
 					},
 				]}
 			>
