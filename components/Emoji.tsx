@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class Emoji extends React.Component {
+export default class Emoji extends React.Component<{nb: number}> {    
 	render() {
+        
+        
 		return (
-			<View style={[styles.emoji, styles.happy]}>
+			<View style={[styles.emoji, {height: this.props.nb/100*272},styles.happy]}>
 				<View></View>
 				<View></View>
 			</View>
@@ -14,15 +16,11 @@ export default class Emoji extends React.Component {
 
 const styles = StyleSheet.create({
 	emoji: {
-		width: 150,
-		height: 150,
-		borderRadius: 50,
+		width: 152,
+        margin: 2,
         backgroundColor: 'yellow',
         position: "relative",
-        marginTop: 20,
-        marginLeft: 20,
-        marginBottom: 0,
-        marginRight: 20
+		borderRadius: 15,
 	},
 	happy: {},
 });

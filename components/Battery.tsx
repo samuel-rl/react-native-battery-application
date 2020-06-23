@@ -1,12 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Emoji from './Emoji';
 
-export default class Battery extends React.Component {
+export default class Battery extends React.Component<{nb: number}> {
 	render() {
 		return (
 			<View style={[styles.container]}>
+                <Text>{this.props.nb}</Text>
 				<View style={[styles.topBattery]}></View>
-				<View style={[styles.battery]}></View>
+				<View style={[styles.battery]}>
+                    <Emoji nb={this.props.nb}></Emoji>
+                </View>
 			</View>
 		);
 	}
