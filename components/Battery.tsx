@@ -20,7 +20,7 @@ export default class Battery extends React.Component<{nb: number, batteryState: 
 				<View style={[styles.battery]}>
                     <BatteryLevel nb={this.props.nb}></BatteryLevel>
                     {(this.props.batteryState==2 && this.state.isTouch == 0)? <Feather name="battery-charging" size={70} color="black"/> : <View></View>}
-                    {this.state.isTouch == 1 ? <Text style={[styles.nbBattery]}>{this.props.nb}</Text>: <View></View>}
+                    {this.state.isTouch == 1 ? <Text style={[styles.nbBattery]}>{this.props.nb + "%"}</Text>: <View></View>}
                 </View>
 			</View>
 		);
