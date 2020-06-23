@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 		height: 280,
 		borderColor: 'black',
 		borderWidth: 2,
-		borderRadius: 15,
+        borderRadius: 15,
     },
     topBattery:{
         width: 75,
