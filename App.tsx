@@ -1,16 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Battery from './components/Battery'
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+        <Battery></Battery>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    resizeMode: 'cover',
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
