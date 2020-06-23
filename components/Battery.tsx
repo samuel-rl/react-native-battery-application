@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import BatteryLevel from './BatteryLevel';
-import Emoji from './Emoji'
 
 export default class Battery extends React.Component<{nb: number, batteryState: number}, {isTouch: number}> {
     constructor(props: any) {
