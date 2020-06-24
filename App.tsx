@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import * as expoBattery from 'expo-battery';
 
-import Battery from './components/Battery';
+import Batteryy from './components/Battery';
 
 export default function App() {
     const [batteryPercentage, setBatteryPercentage] = useState(0);
     const [batteryState, setBatteryState] = useState(0);
+
+    async function getLevel(){
+        const batteryLevel = await expoBattery.getBatteryLevelAsync();
+            setBatteryPercentage(Math.round(batteryLevel * 100));
+    }
 
 	useEffect(() => {
 		async function subscribe() {
@@ -20,12 +25,13 @@ export default function App() {
                 setBatteryState(res.batteryState);
             })
 		}
-		subscribe();
+        subscribe();
+        setInterval(()=> getLevel(), 10000)
     }, []);
     
 	return (
 		<View style={styles.container}>
-			<Battery nb={batteryPercentage} batteryState={batteryState}></Battery>
+			<Batteryy nb={batteryPercentage} batteryState={batteryState}></Batteryy>
 		</View>
 	);
 }

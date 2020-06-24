@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export default class BatteryLevel extends React.Component<{ nb: number }> {
 	render() {
@@ -13,8 +13,6 @@ export default class BatteryLevel extends React.Component<{ nb: number }> {
 					},
 				]}
 			>
-				<View></View>
-				<View></View>
 			</View>
 		);
 	}
